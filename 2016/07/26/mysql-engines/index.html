@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="iByron" />
+  <meta name="keywords" content="MySQL,Engines," />
 
 
 
@@ -84,15 +84,28 @@
 
 
 
-<meta name="description" content="座右铭人生就是死磕自己">
-<meta property="og:type" content="website">
-<meta property="og:title" content="iByron">
-<meta property="og:url" content="http://yoursite.com/archives/2016/07/index.html">
+<meta name="description" content="存储引擎：就是如何存储数据，如何为存储的数据建立索引和如何更新、查询数据等技术的实现方法（存储管理机制）。oracle和sql server数据库都是只有一种存储引擎，而mysql数据库提供了多种存储引擎。
+
+MyISAM
+静态MyISAM：数据表中的列长度固定好（没有varchar、text、blob数据类型）的时候，用这种数据引擎。好处就是处理数据的效率高，如果数据损坏，修复比较容易。
+动态">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL存储引擎">
+<meta property="og:url" content="http://yoursite.com/2016/07/26/mysql-engines/index.html">
 <meta property="og:site_name" content="iByron">
-<meta property="og:description" content="座右铭人生就是死磕自己">
+<meta property="og:description" content="存储引擎：就是如何存储数据，如何为存储的数据建立索引和如何更新、查询数据等技术的实现方法（存储管理机制）。oracle和sql server数据库都是只有一种存储引擎，而mysql数据库提供了多种存储引擎。
+
+MyISAM
+静态MyISAM：数据表中的列长度固定好（没有varchar、text、blob数据类型）的时候，用这种数据引擎。好处就是处理数据的效率高，如果数据损坏，修复比较容易。
+动态">
+<meta property="og:updated_time" content="2016-07-27T14:36:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iByron">
-<meta name="twitter:description" content="座右铭人生就是死磕自己">
+<meta name="twitter:title" content="MySQL存储引擎">
+<meta name="twitter:description" content="存储引擎：就是如何存储数据，如何为存储的数据建立索引和如何更新、查询数据等技术的实现方法（存储管理机制）。oracle和sql server数据库都是只有一种存储引擎，而mysql数据库提供了多种存储引擎。
+
+MyISAM
+静态MyISAM：数据表中的列长度固定好（没有varchar、text、blob数据类型）的时候，用这种数据引擎。好处就是处理数据的效率高，如果数据损坏，修复比较容易。
+动态">
 
 
 
@@ -113,9 +126,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2016/07/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/07/26/mysql-engines/"/>
 
-  <title> 归档 | iByron </title>
+  <title> MySQL存储引擎 | iByron </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,7 +149,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -224,399 +237,167 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 10 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/07/27/mysql-acid/" itemprop="url">
-              
-                <span itemprop="name">MySQL事务</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-27T21:00:28+08:00"
-              content="2016-07-27" >
-          07-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/07/26/mysql-engines/" itemprop="url">
-              
-                <span itemprop="name">MySQL存储引擎</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-26T22:31:15+08:00"
-              content="2016-07-26" >
-          07-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/07/26/preg-info/" itemprop="url">
-              
-                <span itemprop="name">正则表达式简介</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-26T14:04:45+08:00"
-              content="2016-07-26" >
-          07-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/07/25/factory-modal/" itemprop="url">
-              
-                <span itemprop="name">PHP设计模式之工厂模式</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-25T20:00:21+08:00"
-              content="2016-07-25" >
-          07-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/07/24/ddl-dml/" itemprop="url">
-              
-                <span itemprop="name">DDL和DML</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-24T18:28:53+08:00"
-              content="2016-07-24" >
-          07-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/07/23/fast-hexo-blog/" itemprop="url">
-              
-                <span itemprop="name">快速在github上搭建博客</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-23T15:38:22+08:00"
-              content="2016-07-23" >
-          07-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/07/23/api-standard/" itemprop="url">
-              
-                <span itemprop="name">api接口开发要做的那几件事</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-23T13:14:19+08:00"
-              content="2016-07-23" >
-          07-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/07/23/yaml/" itemprop="url">
-              
-                <span itemprop="name">YAML 语言简介</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-23T00:18:48+08:00"
-              content="2016-07-23" >
-          07-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/07/22/ci-model/" itemprop="url">
-              
-                <span itemprop="name">拓展ci的model</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-22T12:58:46+08:00"
-              content="2016-07-22" >
-          07-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/07/21/self-static/" itemprop="url">
-              
-                <span itemprop="name">new self 和 new static 的区别</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-21T20:06:38+08:00"
-              content="2016-07-21" >
-          07-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
+  
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                MySQL存储引擎
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-26T22:31:15+08:00" content="2016-07-26">
+              2016-07-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/26/mysql-engines/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/26/mysql-engines/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>存储引擎：就是如何存储数据，如何为存储的数据建立索引和如何更新、查询数据等技术的实现方法（存储管理机制）。oracle和sql server数据库都是只有一种存储引擎，而mysql数据库提供了多种存储引擎。</p>
+</blockquote>
+<h3 id="MyISAM"><a href="#MyISAM" class="headerlink" title="MyISAM"></a>MyISAM</h3><ul>
+<li>静态MyISAM：数据表中的列长度固定好（没有varchar、text、blob数据类型）的时候，用这种数据引擎。好处就是处理数据的效率高，如果数据损坏，修复比较容易。</li>
+<li>动态MyISAM：数据库表中自动选择列长的时候，自动切换到此引擎。好处存储空间比静态MyISAM引擎小。</li>
+<li>压缩MyISAM：原来压缩是MyISAMCHK工具压缩，更换压缩方式，减小存储空间，但是数据不能修改，读取时因为需要先解压，所以读取速度比较慢。</li>
+</ul>
+<a id="more"></a>
+<p>这是mysql最早提供的存储引擎，但是不管是哪种MyISAM引擎，都不支持事务、行级锁和外键约束功能。</p>
+<h3 id="MyISAM-Merge"><a href="#MyISAM-Merge" class="headerlink" title="MyISAM Merge"></a>MyISAM Merge</h3><p>是MyISAM引擎的变种，将几个相同的MyISAM表合并为一个虚表。主要用于日志和数据仓库。</p>
+<h3 id="InnoDB"><a href="#InnoDB" class="headerlink" title="InnoDB"></a>InnoDB</h3><p>支持事务、行级锁和外键约束功能。</p>
+<h3 id="memory（heap）"><a href="#memory（heap）" class="headerlink" title="memory（heap）"></a>memory（heap）</h3><p>这种类型的数据表只会存储于内存中，使用了散列索引，所以数据的存数速度非常快。主要用于临时表</p>
+<h3 id="archive"><a href="#archive" class="headerlink" title="archive"></a>archive</h3><p>这种类型只支持select和insert语句，不支持索引。主要用于日志记录和聚合分析</p>
+<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">show engines  // 查看引擎列表</div><div class="line">alter table tablename engine=InnoDB  //修改存储引擎</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MySQL/" rel="tag">#MySQL</a>
+          
+            <a href="/tags/Engines/" rel="tag">#Engines</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/26/preg-info/" rel="next" title="正则表达式简介">
+                <i class="fa fa-chevron-left"></i> 正则表达式简介
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/27/mysql-acid/" rel="prev" title="MySQL事务">
+                MySQL事务 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -624,6 +405,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/26/mysql-engines/"
+           data-title="MySQL存储引擎" data-url="http://yoursite.com/2016/07/26/mysql-engines/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -643,8 +432,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/logo.JPG"
@@ -736,6 +534,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#MyISAM"><span class="nav-number">1.</span> <span class="nav-text">MyISAM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MyISAM-Merge"><span class="nav-number">2.</span> <span class="nav-text">MyISAM Merge</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#InnoDB"><span class="nav-number">3.</span> <span class="nav-text">InnoDB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#memory（heap）"><span class="nav-number">4.</span> <span class="nav-text">memory（heap）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#archive"><span class="nav-number">5.</span> <span class="nav-text">archive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令"><span class="nav-number">6.</span> <span class="nav-text">命令</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -839,11 +648,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   
