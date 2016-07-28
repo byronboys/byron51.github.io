@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="PHP,设计模式," />
+  <meta name="keywords" content="HTTP," />
 
 
 
@@ -84,19 +84,16 @@
 
 
 
-<meta name="description" content="简介工厂模式（factory modal）：就是统一实例化。方便日后修改，比如初始化一个类的时候，可能刚开始需要传递两个参数，假如日后初始化的时候需要修改成为三个参数，那么修改的时候，只需要在工厂类中修改就可以，不用到每个实例化的控制器中修改。
-示例12345678class Instance &amp;#123;    public static function getInstance($host,">
+<meta name="description" content="GETget方法是请求指定的资源，一般用于读取数据。比如页面js、image、css、后台数据都是通过get方法请求获得。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PHP设计模式之工厂模式">
-<meta property="og:url" content="http://yoursite.com/2016/07/25/factory-modal/index.html">
+<meta property="og:title" content="HTTP请求方法">
+<meta property="og:url" content="http://yoursite.com/2016/07/28/http-type/index.html">
 <meta property="og:site_name" content="iByron">
-<meta property="og:description" content="简介工厂模式（factory modal）：就是统一实例化。方便日后修改，比如初始化一个类的时候，可能刚开始需要传递两个参数，假如日后初始化的时候需要修改成为三个参数，那么修改的时候，只需要在工厂类中修改就可以，不用到每个实例化的控制器中修改。
-示例12345678class Instance &amp;#123;    public static function getInstance($host,">
-<meta property="og:updated_time" content="2016-07-27T15:23:54.000Z">
+<meta property="og:description" content="GETget方法是请求指定的资源，一般用于读取数据。比如页面js、image、css、后台数据都是通过get方法请求获得。">
+<meta property="og:updated_time" content="2016-07-28T17:54:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PHP设计模式之工厂模式">
-<meta name="twitter:description" content="简介工厂模式（factory modal）：就是统一实例化。方便日后修改，比如初始化一个类的时候，可能刚开始需要传递两个参数，假如日后初始化的时候需要修改成为三个参数，那么修改的时候，只需要在工厂类中修改就可以，不用到每个实例化的控制器中修改。
-示例12345678class Instance &amp;#123;    public static function getInstance($host,">
+<meta name="twitter:title" content="HTTP请求方法">
+<meta name="twitter:description" content="GETget方法是请求指定的资源，一般用于读取数据。比如页面js、image、css、后台数据都是通过get方法请求获得。">
 
 
 
@@ -117,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/25/factory-modal/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/07/28/http-type/"/>
 
-  <title> PHP设计模式之工厂模式 | iByron </title>
+  <title> HTTP请求方法 | iByron </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +246,7 @@
             
             
               
-                PHP设计模式之工厂模式
+                HTTP请求方法
               
             
           </h1>
@@ -261,8 +258,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-25T20:00:21+08:00" content="2016-07-25">
-              2016-07-25
+            <time itemprop="dateCreated" datetime="2016-07-28T01:51:15+08:00" content="2016-07-28">
+              2016-07-28
             </time>
           </span>
 
@@ -275,20 +272,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/PHP/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/PHP/设计模式/" itemprop="url" rel="index">
-                    <span itemprop="name">设计模式</span>
+                  <a href="/categories/HTTP/" itemprop="url" rel="index">
+                    <span itemprop="name">HTTP</span>
                   </a>
                 </span>
 
@@ -303,8 +288,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/25/factory-modal/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/25/factory-modal/" itemprop="commentsCount"></span>
+                <a href="/2016/07/28/http-type/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/28/http-type/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -327,8 +312,16 @@
       
 
       
-        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>工厂模式（factory modal）：就是统一实例化。方便日后修改，比如初始化一个类的时候，可能刚开始需要传递两个参数，假如日后初始化的时候需要修改成为三个参数，那么修改的时候，只需要在工厂类中修改就可以，不用到每个实例化的控制器中修改。</p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Instance</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">getInstance</span><span class="params">($host, $username, $password)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> DB($host, $username, $password);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$db = DB::getInstance(<span class="string">'127.0.0,1'</span>, <span class="string">'root'</span>, <span class="string">'123456'</span>);</div></pre></td></tr></table></figure>
+        <h3 id="GET"><a href="#GET" class="headerlink" title="GET"></a>GET</h3><p>get方法是请求指定的资源，一般用于读取数据。比如页面js、image、css、后台数据都是通过get方法请求获得。</p>
+<a id="more"></a>
+<h3 id="HEAD"><a href="#HEAD" class="headerlink" title="HEAD"></a>HEAD</h3><p>head和get方法都是请求指定的资源，用于读取数据，但是head方法请求不会回传内容，即响应内容只有状态码、消息报头，没有消息体。这个作用一般是用于查看服务器消息</p>
+<h3 id="POST"><a href="#POST" class="headerlink" title="POST"></a>POST</h3><p>post方法是向服务器提交数据，请求服务器处理。一般作用是数据提交、文件上传等等。根据restful协议，post方法一般是新建数据</p>
+<h3 id="PUT"><a href="#PUT" class="headerlink" title="PUT"></a>PUT</h3><p>put方法也是向服务器提交最新数据，请求服务器处理，但是他的作用是修改数据</p>
+<h3 id="DELETE"><a href="#DELETE" class="headerlink" title="DELETE"></a>DELETE</h3><p>delete方法是请求服务器删除uri所标识的资源，delete请求后，指定资源就会被删除</p>
+<h3 id="OPTIONS"><a href="#OPTIONS" class="headerlink" title="OPTIONS"></a>OPTIONS</h3><p>options方法和head方法类似，一般也是查看服务器性能。这个方法向服务器发送请求后，服务器会返回所支持的所有请求方法，options方法请求的资源将会已*号资源名称。向服务器发送options请求，可以判断服务器是否可以正常工作,这种请求方式叫做嗅探请求。javascript中xmlhttprequest对象进行cros跨域请求资源就是通过options方法嗅探请求，借此判断是否有访问该资源的权限。</p>
+<h3 id="CONNECT"><a href="#CONNECT" class="headerlink" title="CONNECT"></a>CONNECT</h3><p>connect链接可以将链接方式改为管道方式代理服务器，通常用于SSL加密服务器的链接与非加密的HTTP代理服务器的通信。</p>
+<h3 id="TRACE"><a href="#TRACE" class="headerlink" title="TRACE"></a>TRACE</h3><p>trace请求服务器，然后服务器显示请求的信息。这个一般用于测试、诊断接口</p>
+<h3 id="PATCH"><a href="#PATCH" class="headerlink" title="PATCH"></a>PATCH</h3><p>patch方法和put方法类似，都是向服务器提交最新的资源，请求服务器更新资源。方法区别就是patch方法是更新一部分内容，put方法是更新所有内容；patch方法如果没有查找到要更新的内容会重新插入一条新纪录，put方法则不会。</p>
 
       
     </div>
@@ -351,9 +344,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/PHP/" rel="tag">#PHP</a>
-          
-            <a href="/tags/设计模式/" rel="tag">#设计模式</a>
+            <a href="/tags/HTTP/" rel="tag">#HTTP</a>
           
         </div>
       
@@ -362,17 +353,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/24/ddl-dml/" rel="next" title="DDL和DML">
-                <i class="fa fa-chevron-left"></i> DDL和DML
+              <a href="/2016/07/27/mysql-acid/" rel="next" title="MySQL事务">
+                <i class="fa fa-chevron-left"></i> MySQL事务
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/26/preg-info/" rel="prev" title="正则表达式简介">
-                正则表达式简介 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -398,8 +385,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/25/factory-modal/"
-           data-title="PHP设计模式之工厂模式" data-url="http://yoursite.com/2016/07/25/factory-modal/">
+      <div class="ds-thread" data-thread-key="2016/07/28/http-type/"
+           data-title="HTTP请求方法" data-url="http://yoursite.com/2016/07/28/http-type/">
       </div>
     
   </div>
@@ -536,7 +523,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-number">2.</span> <span class="nav-text">示例</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#GET"><span class="nav-number">1.</span> <span class="nav-text">GET</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HEAD"><span class="nav-number">2.</span> <span class="nav-text">HEAD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#POST"><span class="nav-number">3.</span> <span class="nav-text">POST</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PUT"><span class="nav-number">4.</span> <span class="nav-text">PUT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DELETE"><span class="nav-number">5.</span> <span class="nav-text">DELETE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OPTIONS"><span class="nav-number">6.</span> <span class="nav-text">OPTIONS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CONNECT"><span class="nav-number">7.</span> <span class="nav-text">CONNECT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TRACE"><span class="nav-number">8.</span> <span class="nav-text">TRACE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PATCH"><span class="nav-number">9.</span> <span class="nav-text">PATCH</span></a></li></ol></div>
             
           </div>
         </section>
