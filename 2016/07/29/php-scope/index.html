@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="iByron" />
+  <meta name="keywords" content="PHP,scope," />
 
 
 
@@ -84,15 +84,19 @@
 
 
 
-<meta name="description" content="座右铭人生就是死磕自己">
-<meta property="og:type" content="website">
-<meta property="og:title" content="iByron">
-<meta property="og:url" content="http://yoursite.com/categories/PHP/CodeIgniter/index.html">
+<meta name="description" content="问题曾经我写了这样一段代码，但是执行出来的结果却让我很意外。1234567$val = 5;$arr = [&apos;byron&apos;, &apos;jack&apos;, &apos;tom&apos;];foreach($arr as $val) &amp;#123;&amp;#125;echo $val;// 结果 tom
+怎么第1行定于的全局变量$val和foreach遍历定义的$val重用了呢?这只能说明，foreach中定义的变量$val也是全局变量。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP变量作用域">
+<meta property="og:url" content="http://yoursite.com/2016/07/29/php-scope/index.html">
 <meta property="og:site_name" content="iByron">
-<meta property="og:description" content="座右铭人生就是死磕自己">
+<meta property="og:description" content="问题曾经我写了这样一段代码，但是执行出来的结果却让我很意外。1234567$val = 5;$arr = [&apos;byron&apos;, &apos;jack&apos;, &apos;tom&apos;];foreach($arr as $val) &amp;#123;&amp;#125;echo $val;// 结果 tom
+怎么第1行定于的全局变量$val和foreach遍历定义的$val重用了呢?这只能说明，foreach中定义的变量$val也是全局变量。">
+<meta property="og:updated_time" content="2016-07-31T09:07:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iByron">
-<meta name="twitter:description" content="座右铭人生就是死磕自己">
+<meta name="twitter:title" content="PHP变量作用域">
+<meta name="twitter:description" content="问题曾经我写了这样一段代码，但是执行出来的结果却让我很意外。1234567$val = 5;$arr = [&apos;byron&apos;, &apos;jack&apos;, &apos;tom&apos;];foreach($arr as $val) &amp;#123;&amp;#125;echo $val;// 结果 tom
+怎么第1行定于的全局变量$val和foreach遍历定义的$val重用了呢?这只能说明，foreach中定义的变量$val也是全局变量。">
 
 
 
@@ -113,9 +117,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/PHP/CodeIgniter/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/07/29/php-scope/"/>
 
-  <title> 分类: CodeIgniter | iByron </title>
+  <title> PHP变量作用域 | iByron </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,7 +140,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -224,47 +228,167 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        CodeIgniter
-        <small>分类</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                PHP变量作用域
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-29T01:13:31+08:00" content="2016-07-29">
+              2016-07-29
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PHP/scope/" itemprop="url" rel="index">
+                    <span itemprop="name">scope</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/29/php-scope/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/29/php-scope/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>曾经我写了这样一段代码，但是执行出来的结果却让我很意外。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$val = <span class="number">5</span>;</div><div class="line">$arr = [<span class="string">'byron'</span>, <span class="string">'jack'</span>, <span class="string">'tom'</span>];</div><div class="line"><span class="keyword">foreach</span>($arr <span class="keyword">as</span> $val) &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="keyword">echo</span> $val;</div><div class="line"><span class="comment">// 结果 tom</span></div></pre></td></tr></table></figure></p>
+<p>怎么第1行定于的全局变量$val和foreach遍历定义的$val重用了呢?<br>这只能说明，foreach中定义的变量$val也是全局变量。</p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/07/22/ci-model/" itemprop="url">
-              
-                <span itemprop="name">拓展ci的model</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-22T12:58:46+08:00"
-              content="2016-07-22" >
-          07-22
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag">#PHP</a>
+          
+            <a href="/tags/scope/" rel="tag">#scope</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/28/http-type/" rel="next" title="HTTP请求方法">
+                <i class="fa fa-chevron-left"></i> HTTP请求方法
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/30/php-cookie/" rel="prev" title="cookie简介">
+                cookie简介 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </section>
 
-  
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -272,6 +396,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/29/php-scope/"
+           data-title="PHP变量作用域" data-url="http://yoursite.com/2016/07/29/php-scope/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -291,8 +423,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/logo.JPG"
@@ -388,6 +529,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -491,6 +643,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
