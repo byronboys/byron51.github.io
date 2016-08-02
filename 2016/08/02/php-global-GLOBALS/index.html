@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="PHP,API," />
+  <meta name="keywords" content="PHP,global,GLOBALS," />
 
 
 
@@ -84,25 +84,22 @@
 
 
 
-<meta name="description" content="前后端分离开发一般都是前后端分离来提高开发效率。我在开发过程中常用到的前后端分离有两种。
-
-传统MVC模式。直接通过model层，把数据分配到view，然后通过模板引擎去解析生成html文件，最后通过服务器返回给浏览器。这样的开发模式缺点很明显，首先前端人员还要学习模板渲染的语法，其次性能也不好。
-为了使数据展现过程更加直接，并且提供更好的用户体验，就有大神对MVC模式进行改进。首先从浏览器发送A">
+<meta name="description" content="globalglobal的作用是定义全局变量,但是这个全局变量不是应用于整个网站,而是应用于当前页面,包括include或require的所有文件。看下面的例子：
+123456$num = 1;function show()&amp;#123;	echo $num;&amp;#125;show();
+上面代码执行会报错，因为函数体内不能访问函数体外边的变量，不过可以通过global定义变量，那么函数体内就可以访问">
 <meta property="og:type" content="article">
-<meta property="og:title" content="api接口开发要做的那几件事">
-<meta property="og:url" content="http://yoursite.com/2016/07/23/api-standard/index.html">
+<meta property="og:title" content="php中global和GLOBALS">
+<meta property="og:url" content="http://yoursite.com/2016/08/02/php-global-GLOBALS/index.html">
 <meta property="og:site_name" content="iByron">
-<meta property="og:description" content="前后端分离开发一般都是前后端分离来提高开发效率。我在开发过程中常用到的前后端分离有两种。
-
-传统MVC模式。直接通过model层，把数据分配到view，然后通过模板引擎去解析生成html文件，最后通过服务器返回给浏览器。这样的开发模式缺点很明显，首先前端人员还要学习模板渲染的语法，其次性能也不好。
-为了使数据展现过程更加直接，并且提供更好的用户体验，就有大神对MVC模式进行改进。首先从浏览器发送A">
-<meta property="og:updated_time" content="2016-07-23T07:10:17.000Z">
+<meta property="og:description" content="globalglobal的作用是定义全局变量,但是这个全局变量不是应用于整个网站,而是应用于当前页面,包括include或require的所有文件。看下面的例子：
+123456$num = 1;function show()&amp;#123;	echo $num;&amp;#125;show();
+上面代码执行会报错，因为函数体内不能访问函数体外边的变量，不过可以通过global定义变量，那么函数体内就可以访问">
+<meta property="og:updated_time" content="2016-08-02T15:02:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="api接口开发要做的那几件事">
-<meta name="twitter:description" content="前后端分离开发一般都是前后端分离来提高开发效率。我在开发过程中常用到的前后端分离有两种。
-
-传统MVC模式。直接通过model层，把数据分配到view，然后通过模板引擎去解析生成html文件，最后通过服务器返回给浏览器。这样的开发模式缺点很明显，首先前端人员还要学习模板渲染的语法，其次性能也不好。
-为了使数据展现过程更加直接，并且提供更好的用户体验，就有大神对MVC模式进行改进。首先从浏览器发送A">
+<meta name="twitter:title" content="php中global和GLOBALS">
+<meta name="twitter:description" content="globalglobal的作用是定义全局变量,但是这个全局变量不是应用于整个网站,而是应用于当前页面,包括include或require的所有文件。看下面的例子：
+123456$num = 1;function show()&amp;#123;	echo $num;&amp;#125;show();
+上面代码执行会报错，因为函数体内不能访问函数体外边的变量，不过可以通过global定义变量，那么函数体内就可以访问">
 
 
 
@@ -123,9 +120,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/23/api-standard/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/02/php-global-GLOBALS/"/>
 
-  <title> api接口开发要做的那几件事 | iByron </title>
+  <title> php中global和GLOBALS | iByron </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -255,7 +252,7 @@
             
             
               
-                api接口开发要做的那几件事
+                php中global和GLOBALS
               
             
           </h1>
@@ -267,8 +264,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-23T13:14:19+08:00" content="2016-07-23">
-              2016-07-23
+            <time itemprop="dateCreated" datetime="2016-08-02T18:18:44+08:00" content="2016-08-02">
+              2016-08-02
             </time>
           </span>
 
@@ -293,8 +290,20 @@
 
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/PHP/API/" itemprop="url" rel="index">
-                    <span itemprop="name">API</span>
+                  <a href="/categories/PHP/global/" itemprop="url" rel="index">
+                    <span itemprop="name">global</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PHP/global/GLOBALS/" itemprop="url" rel="index">
+                    <span itemprop="name">GLOBALS</span>
                   </a>
                 </span>
 
@@ -309,8 +318,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/23/api-standard/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/23/api-standard/" itemprop="commentsCount"></span>
+                <a href="/2016/08/02/php-global-GLOBALS/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/02/php-global-GLOBALS/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -333,20 +342,17 @@
       
 
       
-        <h3 id="前后端分离"><a href="#前后端分离" class="headerlink" title="前后端分离"></a>前后端分离</h3><p>开发一般都是前后端分离来提高开发效率。我在开发过程中常用到的前后端分离有两种。</p>
-<ol>
-<li>传统MVC模式。直接通过model层，把数据分配到view，然后通过模板引擎去解析生成html文件，最后通过服务器返回给浏览器。这样的开发模式缺点很明显，首先前端人员还要学习模板渲染的语法，其次性能也不好。</li>
-<li>为了使数据展现过程更加直接，并且提供更好的用户体验，就有大神对MVC模式进行改进。首先从浏览器发送AJAX请求，然后服务端接受该请求并返回JSON数据返回给浏览器，最后在浏览器中进行界面渲染。这就是RESTful架构。</li>
-</ol>
-<blockquote>
-<p>REST全称是Representational State Transfer（表述性状态转移），是Roy Thomas Fielding在他2000年的博士论文中提出的。</p>
-</blockquote>
-<a id="more"></a>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>我们使用RESTful架构去开发接口，那开发的接口需要做些什么事呢？下面是我在实际开发过程中的一些步骤总结，如果什么不对的，欢迎留言斧正。</p>
-<p>1、先通过拦截器做权限判断<br>2、validation做数据的校验<br>3、controller层的业务逻辑处理<br>4、model层数据操作<br>5、数据结构的组装<br>6、返回数据</p>
-<blockquote>
-<p>上面只是说了一个大概的流程，里面还会涉及到很多细节，比如异常错误的处理，接口返回格式的统一等等。</p>
-</blockquote>
+        <h3 id="global"><a href="#global" class="headerlink" title="global"></a>global</h3><p>global的作用是定义全局变量,但是这个全局变量不是应用于整个网站,而是应用于当前页面,包括include或require的所有文件。看下面的例子：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$num = <span class="number">1</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">echo</span> $num;</div><div class="line">&#125;</div><div class="line">show();</div></pre></td></tr></table></figure>
+<p>上面代码执行会报错，因为函数体内不能访问函数体外边的变量，不过可以通过global定义变量，那么函数体内就可以访问了。<br><a id="more"></a></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$num = <span class="number">1</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">global</span> $num;</div><div class="line">	<span class="keyword">echo</span> $num;</div><div class="line">&#125;</div><div class="line">show();</div><div class="line">结果：<span class="number">1</span></div></pre></td></tr></table></figure>
+<p>不过如果global是在函数体外定义的变量，那么函数体内一样不能访问，如下面的例子将会报错<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">global</span> $num;</div><div class="line">$num = <span class="number">1</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">echo</span> $num;</div><div class="line">&#125;</div><div class="line">show();</div></pre></td></tr></table></figure></p>
+<p>还有一点就是global只能是声明全局变量，不能直接在声明的时候赋值。如：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">global</span> $num=<span class="number">1</span>;  <span class="comment">// 将会报错</span></div></pre></td></tr></table></figure></p>
+<h3 id="GLOBALS"><a href="#GLOBALS" class="headerlink" title="$GLOBALS"></a>$GLOBALS</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$a = $b = $c = <span class="number">0</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">global</span> $a, $b, $c;</div><div class="line">	<span class="keyword">echo</span> $sum = $a+ $b + $c;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果函数体内要引用函数体外的多个变量，将要多声明引用的全部变量。其实还有另外一种写法，那就是用$GLOBALS超全局变量。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$a = $b = $c = <span class="number">0</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">echo</span> $sum = $GLOBALS[<span class="string">'a'</span>]+ $GLOBALS[<span class="string">'b'</span>] + $GLOBALS[<span class="string">'c'</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">function show1()</div><div class="line">&#123;</div><div class="line">	global $num1,$num2;</div><div class="line">	$num2 = $num1;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function show2()</div><div class="line">&#123;</div><div class="line">	global $num1,$num2;</div><div class="line">	$num2 = &amp;$num1;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function show3()</div><div class="line">&#123;</div><div class="line">	$GLOBALS[&apos;num3&apos;] = $GLOBALS[&apos;num1&apos;];</div><div class="line">&#125;</div><div class="line"></div><div class="line">$num1=5;</div><div class="line">$num2=$num3=0;</div><div class="line"></div><div class="line">show1();</div><div class="line">echo $num2;  </div><div class="line">// 结果5</div><div class="line"></div><div class="line">show2();</div><div class="line">echo $num2;</div><div class="line">// 结果0</div><div class="line"></div><div class="line">show3();</div><div class="line">echo $num3;</div><div class="line">// 结果5</div></pre></td></tr></table></figure>
+<p>为什么结果是5 0 5，不是5 5 5呢。<br>因为函数所产生的变量都是函数的私有变量，那么global关键字产生的变量也肯定逃不出这个规则。<br>global定义的变量实际上就是在函数体内重新定义了一个同名的变量，并且指针指向函数体外的变量。<br>所以当函数体内改变global声明的变量指针地址时，就会发生意向不到的事。</p>
+<p>global $num其实就是&amp;$num，调用外部变量的一个别名而已。<br>$num和$GLOBALS[‘num’]是指的同一变量，而不是两个不同的变量。</p>
 
       
     </div>
@@ -371,7 +377,9 @@
           
             <a href="/tags/PHP/" rel="tag">#PHP</a>
           
-            <a href="/tags/API/" rel="tag">#API</a>
+            <a href="/tags/global/" rel="tag">#global</a>
+          
+            <a href="/tags/GLOBALS/" rel="tag">#GLOBALS</a>
           
         </div>
       
@@ -380,17 +388,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/23/yaml/" rel="next" title="YAML 语言简介">
-                <i class="fa fa-chevron-left"></i> YAML 语言简介
+              <a href="/2016/08/01/mysql-nf/" rel="next" title="数据库设计三范式">
+                <i class="fa fa-chevron-left"></i> 数据库设计三范式
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/23/fast-hexo-blog/" rel="prev" title="快速在github上搭建博客">
-                快速在github上搭建博客 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -416,8 +420,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/23/api-standard/"
-           data-title="api接口开发要做的那几件事" data-url="http://yoursite.com/2016/07/23/api-standard/">
+      <div class="ds-thread" data-thread-key="2016/08/02/php-global-GLOBALS/"
+           data-title="php中global和GLOBALS" data-url="http://yoursite.com/2016/08/02/php-global-GLOBALS/">
       </div>
     
   </div>
@@ -554,7 +558,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前后端分离"><span class="nav-number">1.</span> <span class="nav-text">前后端分离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#global"><span class="nav-number">1.</span> <span class="nav-text">global</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GLOBALS"><span class="nav-number">2.</span> <span class="nav-text">$GLOBALS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区别"><span class="nav-number">3.</span> <span class="nav-text">区别</span></a></li></ol></div>
             
           </div>
         </section>
