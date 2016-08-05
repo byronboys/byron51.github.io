@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CI,PHP,Model," />
+  <meta name="keywords" content="PHP,SAPI," />
 
 
 
@@ -84,28 +84,22 @@
 
 
 
-<meta name="description" content="作用CI框架已经提供了ORM操作了，为什么我还去要拓展ci的model呢？主要是基于以下几点考虑的。
+<meta name="description" content="SAPI:Server Application Programming Interface 服务器端应用编程端口。它就是PHP与其它应用交互的接口，PHP脚本要执行有很多种方式，通过Web服务器，或者直接在命令行下，也可以嵌入在其他程序中。SAPI提供了一个和外部通信的接口，常见的SAPI有：cgi 、fast-cgi、cli、isapi、apache 模块的 DLL
 
-因为现在对数据库的操作都封装model里面，没必要每个model都去加载database类，以后维护也麻烦。
-CI因为要增加灵活，导致对表的操作都要传递表名，觉得很蛋疼。对数据库的操作都是在model里面完成，所以没必要传递了，只要model和表名之间做个映射就好啦。
-现在都是团队开发，每个人划">
+CGICGI即通用网关接">
 <meta property="og:type" content="article">
-<meta property="og:title" content="拓展ci的model">
-<meta property="og:url" content="http://yoursite.com/2016/07/22/ci-model/index.html">
+<meta property="og:title" content="php-sapi">
+<meta property="og:url" content="http://yoursite.com/2016/08/04/php-sapi/index.html">
 <meta property="og:site_name" content="iByron">
-<meta property="og:description" content="作用CI框架已经提供了ORM操作了，为什么我还去要拓展ci的model呢？主要是基于以下几点考虑的。
+<meta property="og:description" content="SAPI:Server Application Programming Interface 服务器端应用编程端口。它就是PHP与其它应用交互的接口，PHP脚本要执行有很多种方式，通过Web服务器，或者直接在命令行下，也可以嵌入在其他程序中。SAPI提供了一个和外部通信的接口，常见的SAPI有：cgi 、fast-cgi、cli、isapi、apache 模块的 DLL
 
-因为现在对数据库的操作都封装model里面，没必要每个model都去加载database类，以后维护也麻烦。
-CI因为要增加灵活，导致对表的操作都要传递表名，觉得很蛋疼。对数据库的操作都是在model里面完成，所以没必要传递了，只要model和表名之间做个映射就好啦。
-现在都是团队开发，每个人划">
-<meta property="og:updated_time" content="2016-07-22T12:31:00.000Z">
+CGICGI即通用网关接">
+<meta property="og:updated_time" content="2016-08-03T19:06:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="拓展ci的model">
-<meta name="twitter:description" content="作用CI框架已经提供了ORM操作了，为什么我还去要拓展ci的model呢？主要是基于以下几点考虑的。
+<meta name="twitter:title" content="php-sapi">
+<meta name="twitter:description" content="SAPI:Server Application Programming Interface 服务器端应用编程端口。它就是PHP与其它应用交互的接口，PHP脚本要执行有很多种方式，通过Web服务器，或者直接在命令行下，也可以嵌入在其他程序中。SAPI提供了一个和外部通信的接口，常见的SAPI有：cgi 、fast-cgi、cli、isapi、apache 模块的 DLL
 
-因为现在对数据库的操作都封装model里面，没必要每个model都去加载database类，以后维护也麻烦。
-CI因为要增加灵活，导致对表的操作都要传递表名，觉得很蛋疼。对数据库的操作都是在model里面完成，所以没必要传递了，只要model和表名之间做个映射就好啦。
-现在都是团队开发，每个人划">
+CGICGI即通用网关接">
 
 
 
@@ -126,9 +120,9 @@ CI因为要增加灵活，导致对表的操作都要传递表名，觉得很蛋
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/22/ci-model/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/04/php-sapi/"/>
 
-  <title> 拓展ci的model | iByron </title>
+  <title> php-sapi | iByron </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -258,7 +252,7 @@ CI因为要增加灵活，导致对表的操作都要传递表名，觉得很蛋
             
             
               
-                拓展ci的model
+                php-sapi
               
             
           </h1>
@@ -270,8 +264,8 @@ CI因为要增加灵活，导致对表的操作都要传递表名，觉得很蛋
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-22T12:58:46+08:00" content="2016-07-22">
-              2016-07-22
+            <time itemprop="dateCreated" datetime="2016-08-04T00:39:07+08:00" content="2016-08-04">
+              2016-08-04
             </time>
           </span>
 
@@ -296,8 +290,8 @@ CI因为要增加灵活，导致对表的操作都要传递表名，觉得很蛋
 
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/PHP/CodeIgniter/" itemprop="url" rel="index">
-                    <span itemprop="name">CodeIgniter</span>
+                  <a href="/categories/PHP/SAPI/" itemprop="url" rel="index">
+                    <span itemprop="name">SAPI</span>
                   </a>
                 </span>
 
@@ -312,8 +306,8 @@ CI因为要增加灵活，导致对表的操作都要传递表名，觉得很蛋
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/22/ci-model/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/22/ci-model/" itemprop="commentsCount"></span>
+                <a href="/2016/08/04/php-sapi/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/04/php-sapi/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -336,17 +330,17 @@ CI因为要增加灵活，导致对表的操作都要传递表名，觉得很蛋
       
 
       
-        <h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>CI框架已经提供了ORM操作了，为什么我还去要拓展ci的model呢？主要是基于以下几点考虑的。</p>
-<ul>
-<li>因为现在对数据库的操作都封装model里面，没必要每个model都去加载database类，以后维护也麻烦。</li>
-<li>CI因为要增加灵活，导致对表的操作都要传递表名，觉得很蛋疼。对数据库的操作都是在model里面完成，所以没必要传递了，只要model和表名之间做个映射就好啦。</li>
-<li>现在都是团队开发，每个人划分模块开发，各人负责自己的model开发，如果不规范增删改查的，那会增加很多工作量，假如某个人要调用别人的模块，还要阅读别人的模块api。</li>
-</ul>
-<a id="more"></a> 
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>1、 首先需要把MY_model复制到application/core目录下<br>2、 定义model类型时，必须是表名+_model(表名首字符大写)。如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">user表，对应的model就应该是User_model</div></pre></td></tr></table></figure></p>
-<p>3、 定义好model后，直接继承MY_model即可。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">User_model</span> <span class="keyword">extends</span> <span class="title">MY_model</span> </span>&#123;</div><div class="line">	<span class="comment">// todo...	</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Home</span> <span class="keyword">extends</span> <span class="title">CI_controller</span> </span>&#123;</div><div class="line">	</div><div class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">show</span><span class="params">()</span> </span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">$this</span>-&gt;load-&gt;model(<span class="string">'User_model'</span>);</div><div class="line">		</div><div class="line">		<span class="comment">// 查找单条记录</span></div><div class="line">		$user = <span class="keyword">$this</span>-&gt;User_model-&gt;find(<span class="number">1</span>);</div><div class="line"></div><div class="line">		<span class="comment">// 查找多条记录</span></div><div class="line">		$user = <span class="keyword">$this</span>-&gt;User_model-&gt;get();</div><div class="line"></div><div class="line">		<span class="comment">// 添加</span></div><div class="line">		$insert = [</div><div class="line">			<span class="string">'name'</span> =&gt; <span class="string">'byron'</span>,</div><div class="line">			<span class="string">'password'</span> =&gt; md5(<span class="string">'123'</span>)</div><div class="line">		];</div><div class="line">		$affected = <span class="keyword">$this</span>-&gt;User_model-&gt;insert($insert);</div><div class="line"></div><div class="line">		<span class="comment">// 更新</span></div><div class="line">		$where = [</div><div class="line">			<span class="string">'id'</span> =&gt; <span class="number">1</span></div><div class="line">		];</div><div class="line"></div><div class="line">		$update = [</div><div class="line">			<span class="string">'name'</span> =&gt; <span class="string">'jake'</span> </div><div class="line">		];</div><div class="line">		$affected = <span class="keyword">$this</span>-&gt;User_model-&gt;where($where)-&gt;update($update);</div><div class="line"></div><div class="line">		<span class="comment">// 删除</span></div><div class="line">		$affected = <span class="keyword">$this</span>-&gt;User_model-&gt;where($where)-&gt;delete($where);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>下载地址：<a href="https://github.com/ubyron/fade/blob/master/ci/MY_Model.php" target="_blank" rel="external">github</a></p>
+        <blockquote>
+<p>SAPI:Server Application Programming Interface 服务器端应用编程端口。它就是PHP与其它应用交互的接口，PHP脚本要执行有很多种方式，通过Web服务器，或者直接在命令行下，也可以嵌入在其他程序中。<br>SAPI提供了一个和外部通信的接口，常见的SAPI有：cgi 、fast-cgi、cli、isapi、apache 模块的 DLL</p>
+</blockquote>
+<h3 id="CGI"><a href="#CGI" class="headerlink" title="CGI"></a>CGI</h3><p>CGI即通用网关接口(Common Gateway Interface)，它是一段程序，通俗的讲CGI就象是一座桥，把网页和WEB服务器中的执行程序连接起来，它把HTML接收的指令传递给服务器的执 行程序，再把服务器执行程序的结果返还给HTML页。CGI 的跨平台性能极佳，几乎可以在任何操作系统上实现。<br>CGI方式在遇到连接请求（用户 请求）先要创建cgi的子进程，激活一个CGI进程，然后处理请求，处理完后结束这个子进程。这就是fork-and-execute模式。所以用cgi 方式的服务器有多少连接请求就会有多少cgi子进程，子进程反复加载是cgi性能低下的主要原因。都会当用户请求数量非常多时，会大量挤占系统的资源如内 存，CPU时间等，造成效能低下。</p>
+<h3 id="FastCGI"><a href="#FastCGI" class="headerlink" title="FastCGI"></a>FastCGI</h3><p>fast-cgi 是cgi的升级版本，FastCGI像是一个常驻(long-live)型的CGI，它可以一直执行着，只要激活后，不会每次都要花费时间去fork一 次。PHP使用PHP-FPM(FastCGI Process Manager)，全称PHP FastCGI进程管理器进行管理。</p>
+<p>FastCGI的工作原理</p>
+<p>Web Server启动时载入FastCGI进程管理器(IIS ISAPI或Apache Module)<br>FastCGI进程管理器自身初始化，启动多个CGI解释器进程(可见多个php-cgi)并等待来自Web Server的连接。<br>当客户端请求到达Web Server时，FastCGI进程管理器选择并连接到一个CGI解释器。Web server将CGI环境变量和标准输入发送到FastCGI子进程php-cgi。<br> FastCGI子进程完成处理后将标准输出和错误信息从同一连接返回Web Server。当FastCGI子进程关闭连接时，请求便告处理完成。FastCGI子进程接着等待并处理来自FastCGI进程管理器(运行在Web Server中)的下一个连接。 在CGI模式中，php-cgi在此便退出了。</p>
+<p>在上述情况中，你可以想象CGI通常有多慢。每一个Web 请求PHP都必须重新解析php.ini、重新载入全部扩展并重初始化全部数据结构。使用FastCGI，所有这些都只在进程启动时发生一次。一个额外的 好处是，持续数据库连接(Persistent database connection)可以工作。</p>
+<h3 id="APACHE2HANDLER"><a href="#APACHE2HANDLER" class="headerlink" title="APACHE2HANDLER"></a>APACHE2HANDLER</h3><p>PHP作为Apache模块，Apache服务器在系统启动后，预先生成多个进程副本驻留在内存中，一旦有请求出 现，就立即使用这些空余的子进程进行处理，这样就不存在生成子进程造成的延迟了。这些服务器副本在处理完一次HTTP请求之后并不立即退出，而是停留在计 算机中等待下次请求。对于客户浏览器的请求反应更快，性能较高。<br>apache模块的DLL：<br>该运行模式是我们以前在windows环境下使用apache服务器经常使用的，而在模块化(DLL)中，PHP是与Web服务器一起启动并运行的。（是apache在CGI的基础上进行的一种扩展，加快PHP的运行效率）</p>
+<h3 id="ISAPI"><a href="#ISAPI" class="headerlink" title="ISAPI"></a>ISAPI</h3><p>ISAPI即Internet Server Application Program Interface，是微软提供的一套面向Internet服务的API接口.一个ISAPI的DLL，可以在被用户请求激活后长驻内存，等待用户的另一个请求，还可以在一个DLL里设置多个用户请求处理函数，此外，ISAPI的DLL应用程序和WWW服务器处于同一个进程中，效率要显著高于CGI。</p>
+<h3 id="cli"><a href="#cli" class="headerlink" title="cli"></a>cli</h3><p>cli是php的命令行运行模式，大家经常会使用它，但是可能并没有注意到（例如：我们在linux下经常使用 “php -m”查找PHP安装了那些扩展就是PHP命令行运行模式；</p>
 
       
     </div>
@@ -369,11 +363,9 @@ CI因为要增加灵活，导致对表的操作都要传递表名，觉得很蛋
       
         <div class="post-tags">
           
-            <a href="/tags/CI/" rel="tag">#CI</a>
-          
             <a href="/tags/PHP/" rel="tag">#PHP</a>
           
-            <a href="/tags/Model/" rel="tag">#Model</a>
+            <a href="/tags/SAPI/" rel="tag">#SAPI</a>
           
         </div>
       
@@ -382,17 +374,13 @@ CI因为要增加灵活，导致对表的操作都要传递表名，觉得很蛋
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/21/self-static/" rel="next" title="new self 和 new static 的区别">
-                <i class="fa fa-chevron-left"></i> new self 和 new static 的区别
+              <a href="/2016/08/03/php-trait/" rel="next" title="php trait简介">
+                <i class="fa fa-chevron-left"></i> php trait简介
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/23/yaml/" rel="prev" title="YAML 语言简介">
-                YAML 语言简介 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -418,8 +406,8 @@ CI因为要增加灵活，导致对表的操作都要传递表名，觉得很蛋
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/22/ci-model/"
-           data-title="拓展ci的model" data-url="http://yoursite.com/2016/07/22/ci-model/">
+      <div class="ds-thread" data-thread-key="2016/08/04/php-sapi/"
+           data-title="php-sapi" data-url="http://yoursite.com/2016/08/04/php-sapi/">
       </div>
     
   </div>
@@ -556,7 +544,7 @@ CI因为要增加灵活，导致对表的操作都要传递表名，觉得很蛋
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#作用"><span class="nav-number">1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-number">3.</span> <span class="nav-text">示例</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CGI"><span class="nav-number">1.</span> <span class="nav-text">CGI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FastCGI"><span class="nav-number">2.</span> <span class="nav-text">FastCGI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#APACHE2HANDLER"><span class="nav-number">3.</span> <span class="nav-text">APACHE2HANDLER</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ISAPI"><span class="nav-number">4.</span> <span class="nav-text">ISAPI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cli"><span class="nav-number">5.</span> <span class="nav-text">cli</span></a></li></ol></div>
             
           </div>
         </section>

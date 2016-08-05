@@ -248,6 +248,277 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/04/php-sapi/" itemprop="url">
+                  php-sapi
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-04T00:39:07+08:00" content="2016-08-04">
+              2016-08-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PHP/SAPI/" itemprop="url" rel="index">
+                    <span itemprop="name">SAPI</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/04/php-sapi/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/04/php-sapi/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>SAPI:Server Application Programming Interface 服务器端应用编程端口。它就是PHP与其它应用交互的接口，PHP脚本要执行有很多种方式，通过Web服务器，或者直接在命令行下，也可以嵌入在其他程序中。<br>SAPI提供了一个和外部通信的接口，常见的SAPI有：cgi 、fast-cgi、cli、isapi、apache 模块的 DLL</p>
+</blockquote>
+<h3 id="CGI"><a href="#CGI" class="headerlink" title="CGI"></a>CGI</h3><p>CGI即通用网关接口(Common Gateway Interface)，它是一段程序，通俗的讲CGI就象是一座桥，把网页和WEB服务器中的执行程序连接起来，它把HTML接收的指令传递给服务器的执 行程序，再把服务器执行程序的结果返还给HTML页。CGI 的跨平台性能极佳，几乎可以在任何操作系统上实现。<br>CGI方式在遇到连接请求（用户 请求）先要创建cgi的子进程，激活一个CGI进程，然后处理请求，处理完后结束这个子进程。这就是fork-and-execute模式。所以用cgi 方式的服务器有多少连接请求就会有多少cgi子进程，子进程反复加载是cgi性能低下的主要原因。都会当用户请求数量非常多时，会大量挤占系统的资源如内 存，CPU时间等，造成效能低下。</p>
+<h3 id="FastCGI"><a href="#FastCGI" class="headerlink" title="FastCGI"></a>FastCGI</h3><p>fast-cgi 是cgi的升级版本，FastCGI像是一个常驻(long-live)型的CGI，它可以一直执行着，只要激活后，不会每次都要花费时间去fork一 次。PHP使用PHP-FPM(FastCGI Process Manager)，全称PHP FastCGI进程管理器进行管理。</p>
+<p>FastCGI的工作原理</p>
+<p>Web Server启动时载入FastCGI进程管理器(IIS ISAPI或Apache Module)<br>FastCGI进程管理器自身初始化，启动多个CGI解释器进程(可见多个php-cgi)并等待来自Web Server的连接。<br>当客户端请求到达Web Server时，FastCGI进程管理器选择并连接到一个CGI解释器。Web server将CGI环境变量和标准输入发送到FastCGI子进程php-cgi。<br> FastCGI子进程完成处理后将标准输出和错误信息从同一连接返回Web Server。当FastCGI子进程关闭连接时，请求便告处理完成。FastCGI子进程接着等待并处理来自FastCGI进程管理器(运行在Web Server中)的下一个连接。 在CGI模式中，php-cgi在此便退出了。</p>
+<p>在上述情况中，你可以想象CGI通常有多慢。每一个Web 请求PHP都必须重新解析php.ini、重新载入全部扩展并重初始化全部数据结构。使用FastCGI，所有这些都只在进程启动时发生一次。一个额外的 好处是，持续数据库连接(Persistent database connection)可以工作。</p>
+<h3 id="APACHE2HANDLER"><a href="#APACHE2HANDLER" class="headerlink" title="APACHE2HANDLER"></a>APACHE2HANDLER</h3><p>PHP作为Apache模块，Apache服务器在系统启动后，预先生成多个进程副本驻留在内存中，一旦有请求出 现，就立即使用这些空余的子进程进行处理，这样就不存在生成子进程造成的延迟了。这些服务器副本在处理完一次HTTP请求之后并不立即退出，而是停留在计 算机中等待下次请求。对于客户浏览器的请求反应更快，性能较高。<br>apache模块的DLL：<br>该运行模式是我们以前在windows环境下使用apache服务器经常使用的，而在模块化(DLL)中，PHP是与Web服务器一起启动并运行的。（是apache在CGI的基础上进行的一种扩展，加快PHP的运行效率）</p>
+<h3 id="ISAPI"><a href="#ISAPI" class="headerlink" title="ISAPI"></a>ISAPI</h3><p>ISAPI即Internet Server Application Program Interface，是微软提供的一套面向Internet服务的API接口.一个ISAPI的DLL，可以在被用户请求激活后长驻内存，等待用户的另一个请求，还可以在一个DLL里设置多个用户请求处理函数，此外，ISAPI的DLL应用程序和WWW服务器处于同一个进程中，效率要显著高于CGI。</p>
+<h3 id="cli"><a href="#cli" class="headerlink" title="cli"></a>cli</h3><p>cli是php的命令行运行模式，大家经常会使用它，但是可能并没有注意到（例如：我们在linux下经常使用 “php -m”查找PHP安装了那些扩展就是PHP命令行运行模式；</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/03/php-trait/" itemprop="url">
+                  php trait简介
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-03T10:50:25+08:00" content="2016-08-03">
+              2016-08-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/03/php-trait/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/03/php-trait/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>trait是php5.4是的一个新特性。php是单继承的，trait看起来一个类可以实现多继承。</p>
+</blockquote>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>用trait关键字声明类，在引用的类中通过use关键字声明trait类即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">trait Play &#123;</div><div class="line">	public $name = &quot;basketball&quot;;</div><div class="line">	public function time()</div><div class="line">	&#123;</div><div class="line">		echo &quot;&#123;$this-&gt;name&#125; 48minute&quot;;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Student &#123;</div><div class="line">	use Play;</div><div class="line">	public function study()</div><div class="line">	&#123;</div><div class="line">		echo &quot;student study&quot;;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">$student = new Student();</div><div class="line">$student-&gt;study();  // student study</div><div class="line">$student-&gt;time();   // basketball 48minute</div></pre></td></tr></table></figure></p>
+<p>trait就像一个普通的类一样，支持所有的修饰词，静态方法，静态属性，抽象方法。但是trait不能直接实例化。</p>
+<h3 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h3><p>trait之间还可以嵌套<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">trait Play &#123;</div><div class="line">	public $name = &quot;basketball&quot;;</div><div class="line">	public function time()</div><div class="line">	&#123;</div><div class="line">		echo &quot;&#123;$this-&gt;name&#125; 48minute&quot;;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">trait Eat &#123;</div><div class="line">	use Play;</div><div class="line">	public function food()</div><div class="line">	&#123;</div><div class="line">		echo &quot;rice&quot;;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Student &#123;</div><div class="line">	use Eat;</div><div class="line">	public function study()</div><div class="line">	&#123;</div><div class="line">		echo &quot;student study&quot;;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">$student = new Student();</div><div class="line">$student-&gt;time();</div><div class="line">$student-&gt;food();</div></pre></td></tr></table></figure></p>
+<p>嵌套其实会产生一个问题，那就是多个Trait包含同名属性或者方法时，会产生一个致命错误。<br>可以通过使用insteadof和as操作符来解决冲突。insteadof是使用某个方法替代另一个，而as是给方法取一个别名。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">trait Hello &#123;</div><div class="line">	public function show()</div><div class="line">	&#123;</div><div class="line">		echo &quot;hello&quot;;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">trait World &#123;</div><div class="line">	public function show()</div><div class="line">	&#123;</div><div class="line">		echo &quot;world&quot;;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Student &#123;</div><div class="line">	use Hello, World &#123;</div><div class="line">		World::show insteadof Hello; </div><div class="line">		World::show as display;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public function study()</div><div class="line">	&#123;</div><div class="line">		echo &quot;study&quot;;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">$stu = new Student();</div><div class="line">$stu-&gt;show(); // world</div><div class="line">$stu-&gt;display(); // world</div></pre></td></tr></table></figure></p>
+<p>as 还有一个功能，就可以可以修改修饰符。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">trait Hello &#123;</div><div class="line">	public function show()</div><div class="line">	&#123;</div><div class="line">		echo &quot;hello&quot;;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">trait World &#123;</div><div class="line">	public function show()</div><div class="line">	&#123;</div><div class="line">		echo &quot;world&quot;;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Student &#123;</div><div class="line">	use Hello, World &#123;</div><div class="line">		World::show insteadof Hello; </div><div class="line">		World::show as protected display;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public function study()</div><div class="line">	&#123;</div><div class="line">		echo &quot;study&quot;;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">$stu = new Student();</div><div class="line">$stu-&gt;show(); // world</div><div class="line">$stu-&gt;display(); // world</div></pre></td></tr></table></figure></p>
+<h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><p>假如一个类继承了一个父类并且引用了trait类，假如这三个类都有同名方法，覆盖的优先级是怎样的呢。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">class Play &#123;</div><div class="line">	public function show()</div><div class="line">	&#123;</div><div class="line">		echo &quot;trait show&quot;;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public function display()</div><div class="line">	&#123;</div><div class="line">		echo &quot;trait display&quot;;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Person &#123;</div><div class="line">	public function show()</div><div class="line">	&#123;</div><div class="line">		echo &quot;person show&quot;;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public function display()</div><div class="line">	&#123;</div><div class="line">		echo &quot;person display&quot;;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Student extends Person &#123;</div><div class="line">	use Play;</div><div class="line">	public function show()</div><div class="line">	&#123;</div><div class="line">		echo &quot;student show&quot;;</div><div class="line">	&#125;	</div><div class="line">&#125;</div><div class="line">$stu = new Student();</div><div class="line">$stu-&gt;show(); // student show</div><div class="line">$stu-&gt;display();  // trait display</div></pre></td></tr></table></figure></p>
+<p>可以看出，当方法或属性同名时，当前类中的方法会覆盖trait的方法，而trait的方法又覆盖了基类中的方法</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/02/php-global-GLOBALS/" itemprop="url">
                   php中global和GLOBALS
                 </a>
@@ -1246,281 +1517,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/26/preg-info/" itemprop="url">
-                  正则表达式简介
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-26T14:04:45+08:00" content="2016-07-26">
-              2016-07-26
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/PHP/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/PHP/正则表达式/" itemprop="url" rel="index">
-                    <span itemprop="name">正则表达式</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/26/preg-info/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/26/preg-info/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="边界符"><a href="#边界符" class="headerlink" title="边界符"></a>边界符</h3><ul>
-<li>/ /  默认</li>
-<li># #</li>
-<li>{ }</li>
-</ul>
-<h3 id="原子"><a href="#原子" class="headerlink" title="原子"></a>原子</h3><ul>
-<li>可见原子  键盘输入我们肉眼可以看到的</li>
-<li>不可见原子   换行符\n  回车\r  制表符\t 空格  \f  \v</li>
-</ul>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/26/preg-info/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/25/factory-modal/" itemprop="url">
-                  PHP设计模式之工厂模式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-25T20:00:21+08:00" content="2016-07-25">
-              2016-07-25
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/PHP/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/PHP/设计模式/" itemprop="url" rel="index">
-                    <span itemprop="name">设计模式</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/25/factory-modal/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/25/factory-modal/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>工厂模式（factory modal）：就是统一实例化。方便日后修改，比如初始化一个类的时候，可能刚开始需要传递两个参数，假如日后初始化的时候需要修改成为三个参数，那么修改的时候，只需要在工厂类中修改就可以，不用到每个实例化的控制器中修改。</p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Instance</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">getInstance</span><span class="params">($host, $username, $password)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> DB($host, $username, $password);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$db = DB::getInstance(<span class="string">'127.0.0,1'</span>, <span class="string">'root'</span>, <span class="string">'123456'</span>);</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1566,7 +1562,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1574,7 +1570,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1583,7 +1579,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
