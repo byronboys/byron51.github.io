@@ -257,6 +257,282 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/15/mysql-sad-lock/" itemprop="url">
+                  MySQL锁机制之悲观锁
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-15T10:59:47+08:00" content="2016-09-15">
+              2016-09-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/MySQL/Lock/" itemprop="url" rel="index">
+                    <span itemprop="name">Lock</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/15/mysql-sad-lock/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/15/mysql-sad-lock/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>悲观锁就是采取比较保守的态度。当数据在处理过程中，将这条数据锁死。悲观锁的时候，往往依靠数据库的锁机制来实现。也只有数据库层提供的锁机制才能保证数据访问的排他性。</p>
+</blockquote>
+<h3 id="使用场景举例："><a href="#使用场景举例：" class="headerlink" title="使用场景举例："></a>使用场景举例：</h3><p>假如有一个商品表（goods）,有三个字段，id、name、status。status等于0表示商品未下单，1表示商品已经下单。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">表结构</div><div class="line"></div><div class="line">id    name     status</div><div class="line">1     道具      1</div></pre></td></tr></table></figure></p>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">// 1、首先使用命令，关闭自动提交属性。即当你执行一个更新操作，MYSQL会立即提交。</div><div class="line">set autocommit=0</div><div class="line"></div><div class="line">// 2、开启事务</div><div class="line">begin | begin work | start transaction</div><div class="line"></div><div class="line">// 3、查询</div><div class="line">select * from goods for update</div><div class="line"></div><div class="line">// 4、生成订单</div><div class="line">insert into orders(goods_id, name) values(1,&apos;道具&apos;);</div><div class="line"></div><div class="line">// 5、更新</div><div class="line">update goods set status=1 where id=1</div><div class="line"></div><div class="line">// 6、提交事务</div><div class="line">commit | commit work</div></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/15/mysql-sad-lock/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/14/mysql-happy-lock/" itemprop="url">
+                  MySQL锁机制之乐观锁
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-14T00:48:45+08:00" content="2016-09-14">
+              2016-09-14
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/MySQL/Lock/" itemprop="url" rel="index">
+                    <span itemprop="name">Lock</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/14/mysql-happy-lock/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/14/mysql-happy-lock/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>并发更新不是很高的时候，可以考虑乐观锁。</p>
+</blockquote>
+<p>乐观锁的前提是假设用户提交的数据是不会冲突的，当用户提交更新数据的时候，检测用户提交过来的数据和当前记录（要更新记录的记录但是还没有更新）的某个字段是否相等，如果相等那么就更新，否则返回给用户。实现乐观锁一般有两种方法：</p>
+<h3 id="版本号"><a href="#版本号" class="headerlink" title="版本号"></a>版本号</h3><p>每条记录添加一个版本号的字段，当发生更新的时候，版本号自动加1。当用户提交过来数据的时候，检测版本号是否相等，如果相等，那么执行更新，否则失败。</p>
+<h3 id="时间戳"><a href="#时间戳" class="headerlink" title="时间戳"></a>时间戳</h3><p>每条记录添加一个时间戳字段，当发生更新的时候，比对时间戳是否一致。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">插入的时候获取当前时间，更新的时候获取当前时间。</div><div class="line">timestap defaul CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/19/php-const-log/" itemprop="url">
                   PHP 日志常量
                 </a>
@@ -1256,275 +1532,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/30/php-cookie/" itemprop="url">
-                  cookie简介
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-30T16:53:02+08:00" content="2016-07-30">
-              2016-07-30
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/PHP/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/PHP/COOKIE/" itemprop="url" rel="index">
-                    <span itemprop="name">COOKIE</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/30/php-cookie/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/30/php-cookie/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>js cookie api接口 document.cookie</p>
-<h3 id="cookie-属性"><a href="#cookie-属性" class="headerlink" title="cookie 属性"></a>cookie 属性</h3><p>cookie是串字符串，属性之间用；隔开。cookie有几个默认属性，可以设置，也可以不设置</p>
-<h5 id="1）、expires-过期时间"><a href="#1）、expires-过期时间" class="headerlink" title="1）、expires   过期时间"></a>1）、expires   过期时间</h5><p>expires 设置这个cookie的过期时间，如果没有设置，默认是session的过期时间，即会话cookie，浏览器关闭即失效。如果设置过期时间的话，必须是GMT格式的时间，可以通过这两个函数设置时间，new Date().toGMTString()或者new Date().toUTCString().<br>例如：<br>expires=Thu, 25 Feb 2016 04:18:00:00 GMT   标示cookie将在2016年2月25日4:18分之后失效。对于失效的cookie，浏览器会清理掉。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/30/php-cookie/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/29/php-scope/" itemprop="url">
-                  PHP变量作用域
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-29T01:13:31+08:00" content="2016-07-29">
-              2016-07-29
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/PHP/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/PHP/scope/" itemprop="url" rel="index">
-                    <span itemprop="name">scope</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/29/php-scope/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/29/php-scope/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>曾经我写了这样一段代码，但是执行出来的结果却让我很意外。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$val = <span class="number">5</span>;</div><div class="line">$arr = [<span class="string">'byron'</span>, <span class="string">'jack'</span>, <span class="string">'tom'</span>];</div><div class="line"><span class="keyword">foreach</span>($arr <span class="keyword">as</span> $val) &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="keyword">echo</span> $val;</div><div class="line"><span class="comment">// 结果 tom</span></div></pre></td></tr></table></figure></p>
-<p>怎么第1行定于的全局变量$val和foreach遍历定义的$val重用了呢?<br>这只能说明，foreach中定义的变量$val也是全局变量。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1570,7 +1577,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">23</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1578,7 +1585,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1587,7 +1594,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">28</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
