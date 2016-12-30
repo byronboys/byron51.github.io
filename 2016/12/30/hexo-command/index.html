@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="MySQL,Lock," />
+  <meta name="keywords" content="Hexo," />
 
 
 
@@ -84,25 +84,19 @@
 
 
 
-<meta name="description" content="悲观锁就是采取比较保守的态度。当数据在处理过程中，将这条数据锁死。悲观锁的时候，往往依靠数据库的锁机制来实现。也只有数据库层提供的锁机制才能保证数据访问的排他性。
-
-使用场景举例：假如有一个商品表（goods）,有三个字段，id、name、status。status等于0表示商品未下单，1表示商品已经下单。1234表结构id    name     status1     道具      1
-步">
+<meta name="description" content="记录自己常用hexo命令
+安装12345npm install hexo -g #安装  npm update hexo -g #升级  hexo init blog #初始化，生成文件夹为blogcd blognpm install #安装依赖库">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL锁机制之悲观锁">
-<meta property="og:url" content="http://yoursite.com/2016/09/15/mysql-sad-lock/index.html">
+<meta property="og:title" content="hexo常用命令">
+<meta property="og:url" content="http://yoursite.com/2016/12/30/hexo-command/index.html">
 <meta property="og:site_name" content="iByron">
-<meta property="og:description" content="悲观锁就是采取比较保守的态度。当数据在处理过程中，将这条数据锁死。悲观锁的时候，往往依靠数据库的锁机制来实现。也只有数据库层提供的锁机制才能保证数据访问的排他性。
-
-使用场景举例：假如有一个商品表（goods）,有三个字段，id、name、status。status等于0表示商品未下单，1表示商品已经下单。1234表结构id    name     status1     道具      1
-步">
-<meta property="og:updated_time" content="2016-09-13T17:14:47.000Z">
+<meta property="og:description" content="记录自己常用hexo命令
+安装12345npm install hexo -g #安装  npm update hexo -g #升级  hexo init blog #初始化，生成文件夹为blogcd blognpm install #安装依赖库">
+<meta property="og:updated_time" content="2016-12-30T12:34:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL锁机制之悲观锁">
-<meta name="twitter:description" content="悲观锁就是采取比较保守的态度。当数据在处理过程中，将这条数据锁死。悲观锁的时候，往往依靠数据库的锁机制来实现。也只有数据库层提供的锁机制才能保证数据访问的排他性。
-
-使用场景举例：假如有一个商品表（goods）,有三个字段，id、name、status。status等于0表示商品未下单，1表示商品已经下单。1234表结构id    name     status1     道具      1
-步">
+<meta name="twitter:title" content="hexo常用命令">
+<meta name="twitter:description" content="记录自己常用hexo命令
+安装12345npm install hexo -g #安装  npm update hexo -g #升级  hexo init blog #初始化，生成文件夹为blogcd blognpm install #安装依赖库">
 
 
 
@@ -123,9 +117,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/09/15/mysql-sad-lock/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/12/30/hexo-command/"/>
 
-  <title> MySQL锁机制之悲观锁 | iByron </title>
+  <title> hexo常用命令 | iByron </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -264,7 +258,7 @@
             
             
               
-                MySQL锁机制之悲观锁
+                hexo常用命令
               
             
           </h1>
@@ -276,8 +270,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-15T10:59:47+08:00" content="2016-09-15">
-              2016-09-15
+            <time itemprop="dateCreated" datetime="2016-12-30T20:00:00+08:00" content="2016-12-30">
+              2016-12-30
             </time>
           </span>
 
@@ -290,20 +284,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/MySQL/" itemprop="url" rel="index">
-                    <span itemprop="name">MySQL</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/MySQL/Lock/" itemprop="url" rel="index">
-                    <span itemprop="name">Lock</span>
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
                   </a>
                 </span>
 
@@ -318,8 +300,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/15/mysql-sad-lock/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/15/mysql-sad-lock/" itemprop="commentsCount"></span>
+                <a href="/2016/12/30/hexo-command/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/30/hexo-command/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -342,17 +324,28 @@
       
 
       
-        <blockquote>
-<p>悲观锁就是采取比较保守的态度。当数据在处理过程中，将这条数据锁死。悲观锁的时候，往往依靠数据库的锁机制来实现。也只有数据库层提供的锁机制才能保证数据访问的排他性。</p>
-</blockquote>
-<h3 id="使用场景举例："><a href="#使用场景举例：" class="headerlink" title="使用场景举例："></a>使用场景举例：</h3><p>假如有一个商品表（goods）,有三个字段，id、name、status。status等于0表示商品未下单，1表示商品已经下单。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">表结构</div><div class="line"></div><div class="line">id    name     status</div><div class="line">1     道具      1</div></pre></td></tr></table></figure></p>
-<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">// 1、首先使用命令，关闭自动提交属性。即当你执行一个更新操作，MYSQL会立即提交。</div><div class="line">set autocommit=0</div><div class="line"></div><div class="line">// 2、开启事务</div><div class="line">begin | begin work | start transaction</div><div class="line"></div><div class="line">// 3、查询</div><div class="line">select * from goods for update</div><div class="line"></div><div class="line">// 4、生成订单</div><div class="line">insert into orders(goods_id, name) values(1,&apos;道具&apos;);</div><div class="line"></div><div class="line">// 5、更新</div><div class="line">update goods set status=1 where id=1</div><div class="line"></div><div class="line">// 6、提交事务</div><div class="line">commit | commit work</div></pre></td></tr></table></figure>
+        <p>记录自己常用hexo命令</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">npm install hexo -g #安装  </div><div class="line">npm update hexo -g #升级  </div><div class="line">hexo init blog #初始化，生成文件夹为blog</div><div class="line">cd blog</div><div class="line">npm install #安装依赖库</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>当我们执行第二步的时候，数据库就会更根据主键，即id把这条记录给锁死，当第二个用户继续执行查询数据的时候，这个查询就会受到阻塞，只有第一个事务提交数据更新之后，第二个事务才会查询到结果。</p>
-<h3 id="锁定数据范围"><a href="#锁定数据范围" class="headerlink" title="锁定数据范围"></a>锁定数据范围</h3><p>执行事务时关键字select…for update会锁定数据，防止其他事务更改数据。但是锁定数据也是有规则的。<br>查询条件与锁定范围：<br>1、具体的主键值为查询条件<br>比如查询条件为主键ID=1，如果此条数据存在，则锁定当前行数据，如果不存在，则不锁定。</p>
-<p>2、不具体的主键值为查询条件<br>比如查询条件为主键ID&gt;1，此时会锁定整张数据表。</p>
-<p>3、查询条件中无主键<br>会锁定整张数据表。</p>
-<p>4、如果查询条件中使用了索引为查询条件<br>明确指定索引并且查到，则锁定整条数据。如果找不到指定索引数据，则不加锁。</p>
+<h3 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h3><blockquote>
+<p>hexo server 简写 hexo s</p>
+</blockquote>
+<p>参数：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo server -s 静态模式</div><div class="line">hexo server -p port 指定端口号</div><div class="line">hexo server -i ip 指定ip</div></pre></td></tr></table></figure></p>
+<h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><blockquote>
+<p>hexo new <layout> <templates> title  简写 hexo n</templates></layout></p>
+</blockquote>
+<h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><blockquote>
+<p>hexo publish <layout> title 简写 hexo p</layout></p>
+</blockquote>
+<h3 id="生成"><a href="#生成" class="headerlink" title="生成"></a>生成</h3><blockquote>
+<p>hexo generate 简写 hexo g</p>
+</blockquote>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><blockquote>
+<p>hexo deploy 简写 hexo d</p>
+</blockquote>
+<h3 id="清除"><a href="#清除" class="headerlink" title="清除"></a>清除</h3><blockquote>
+<p>hexo clear</p>
+</blockquote>
 
       
     </div>
@@ -375,9 +368,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/MySQL/" rel="tag">#MySQL</a>
-          
-            <a href="/tags/Lock/" rel="tag">#Lock</a>
+            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
           
         </div>
       
@@ -386,17 +377,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/14/mysql-happy-lock/" rel="next" title="MySQL锁机制之乐观锁">
-                <i class="fa fa-chevron-left"></i> MySQL锁机制之乐观锁
+              <a href="/2016/12/29/liunx-show-version/" rel="next" title="liunx系统查看系统版本">
+                <i class="fa fa-chevron-left"></i> liunx系统查看系统版本
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/29/liunx-show-version/" rel="prev" title="liunx系统查看系统版本">
-                liunx系统查看系统版本 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -422,8 +409,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/15/mysql-sad-lock/"
-           data-title="MySQL锁机制之悲观锁" data-url="http://yoursite.com/2016/09/15/mysql-sad-lock/">
+      <div class="ds-thread" data-thread-key="2016/12/30/hexo-command/"
+           data-title="hexo常用命令" data-url="http://yoursite.com/2016/12/30/hexo-command/">
       </div>
     
   </div>
@@ -560,7 +547,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用场景举例："><span class="nav-number">1.</span> <span class="nav-text">使用场景举例：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-number">2.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#锁定数据范围"><span class="nav-number">3.</span> <span class="nav-text">锁定数据范围</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预览"><span class="nav-number">2.</span> <span class="nav-text">预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建文章"><span class="nav-number">3.</span> <span class="nav-text">新建文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布"><span class="nav-number">4.</span> <span class="nav-text">发布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成"><span class="nav-number">5.</span> <span class="nav-text">生成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署"><span class="nav-number">6.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清除"><span class="nav-number">7.</span> <span class="nav-text">清除</span></a></li></ol></div>
             
           </div>
         </section>
