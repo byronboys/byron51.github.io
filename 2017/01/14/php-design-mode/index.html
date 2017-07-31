@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="PHP,正则表达式," />
+  <meta name="keywords" content="事件," />
 
 
 
@@ -84,37 +84,31 @@
 
 
 
-<meta name="description" content="边界符
-/ /  默认
-# #
-{ }
+<meta name="description" content="在论坛上看到一个关于事件驱动的优缺点问题，然后就去网上找了找，现在记录下自己的想法。
 
-原子
-可见原子  键盘输入我们肉眼可以看到的
-不可见原子   换行符\n  回车\r  制表符\t 空格  \f  \v">
+事件驱动，字面意思就是事件驱动着去干某件事，那事件就是主体。看了下百度百科对事件的定义是比较重大,对一定的人群会产生一定影响的事情。那对应与程序，我觉得每个请求也可以看成是一个事件呀，因为你发起一个请求，肯定就会有处理，有影响。
+
+事件驱动存在着这三样东西，事件接收器，事件分发器，事件处理器。
+事件接收器主要做">
 <meta property="og:type" content="article">
-<meta property="og:title" content="正则表达式简介">
-<meta property="og:url" content="http://yoursite.com/2016/07/26/preg-info/index.html">
+<meta property="og:title" content="事件驱动">
+<meta property="og:url" content="http://yoursite.com/2017/01/14/php-design-mode/index.html">
 <meta property="og:site_name" content="iByron">
-<meta property="og:description" content="边界符
-/ /  默认
-# #
-{ }
+<meta property="og:description" content="在论坛上看到一个关于事件驱动的优缺点问题，然后就去网上找了找，现在记录下自己的想法。
 
-原子
-可见原子  键盘输入我们肉眼可以看到的
-不可见原子   换行符\n  回车\r  制表符\t 空格  \f  \v">
-<meta property="og:updated_time" content="2016-07-27T15:01:59.000Z">
+事件驱动，字面意思就是事件驱动着去干某件事，那事件就是主体。看了下百度百科对事件的定义是比较重大,对一定的人群会产生一定影响的事情。那对应与程序，我觉得每个请求也可以看成是一个事件呀，因为你发起一个请求，肯定就会有处理，有影响。
+
+事件驱动存在着这三样东西，事件接收器，事件分发器，事件处理器。
+事件接收器主要做">
+<meta property="og:updated_time" content="2017-01-14T03:08:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="正则表达式简介">
-<meta name="twitter:description" content="边界符
-/ /  默认
-# #
-{ }
+<meta name="twitter:title" content="事件驱动">
+<meta name="twitter:description" content="在论坛上看到一个关于事件驱动的优缺点问题，然后就去网上找了找，现在记录下自己的想法。
 
-原子
-可见原子  键盘输入我们肉眼可以看到的
-不可见原子   换行符\n  回车\r  制表符\t 空格  \f  \v">
+事件驱动，字面意思就是事件驱动着去干某件事，那事件就是主体。看了下百度百科对事件的定义是比较重大,对一定的人群会产生一定影响的事情。那对应与程序，我觉得每个请求也可以看成是一个事件呀，因为你发起一个请求，肯定就会有处理，有影响。
+
+事件驱动存在着这三样东西，事件接收器，事件分发器，事件处理器。
+事件接收器主要做">
 
 
 
@@ -135,9 +129,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/26/preg-info/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/01/14/php-design-mode/"/>
 
-  <title> 正则表达式简介 | iByron </title>
+  <title> 事件驱动 | iByron </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -276,7 +270,7 @@
             
             
               
-                正则表达式简介
+                事件驱动
               
             
           </h1>
@@ -288,50 +282,19 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-26T14:04:45+08:00" content="2016-07-26">
-              2016-07-26
+            <time itemprop="dateCreated" datetime="2017-01-14T10:35:37+08:00" content="2017-01-14">
+              2017-01-14
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/PHP/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/PHP/正则表达式/" itemprop="url" rel="index">
-                    <span itemprop="name">正则表达式</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/26/preg-info/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/26/preg-info/" itemprop="commentsCount"></span>
+                <a href="/2017/01/14/php-design-mode/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/14/php-design-mode/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -354,53 +317,22 @@
       
 
       
-        <h3 id="边界符"><a href="#边界符" class="headerlink" title="边界符"></a>边界符</h3><ul>
-<li>/ /  默认</li>
-<li># #</li>
-<li>{ }</li>
-</ul>
-<h3 id="原子"><a href="#原子" class="headerlink" title="原子"></a>原子</h3><ul>
-<li>可见原子  键盘输入我们肉眼可以看到的</li>
-<li>不可见原子   换行符\n  回车\r  制表符\t 空格  \f  \v</li>
-</ul>
-<a id="more"></a>
-<h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><ul>
-<li>|   标示匹配两个或者多个分支</li>
-<li>[ 3 ] 匹配方括号中的任意字符</li>
-<li>[^ ] 匹配除方括号中的任意字符</li>
-</ul>
-<h3 id="原子集合"><a href="#原子集合" class="headerlink" title="原子集合"></a>原子集合</h3><ul>
-<li>. 匹配除换行符(\n)之外的任意字符</li>
-<li>\d  匹配所有数字  [0-9]</li>
-<li>\D  匹配非数字 [^0-9]</li>
-<li>\s   匹配不可见原子 [\f\n\r\t\v]</li>
-<li>\S   匹配可见原子 [^\f\n\r\t\v]</li>
-<li>\w   匹配所有字母、数字和下划线 [0-9a-zA-Z_]</li>
-<li>\W   匹配非字母、数字和下划线[^0-9a-zA-Z]</li>
-</ul>
-<h3 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h3><ul>
-<li>{n}  匹配之前的字符出现n次</li>
-<li>{n,} 匹配之前的字符至少出现n次</li>
-<li>{n,m}  匹配之前出现的字符至少出现n次，最多出现m次</li>
-<li>*   出现0次，1次或者n次   {0,}</li>
-<li>+  至少出现1次  {1,}</li>
-<li>?  没有出现或者最多出现1次 {0,1}</li>
-</ul>
-<h3 id="边界控制"><a href="#边界控制" class="headerlink" title="边界控制"></a>边界控制</h3><ul>
-<li>^ 匹配开头位置</li>
-<li>$ 匹配结尾位置</li>
-</ul>
-<h3 id="模式单元"><a href="#模式单元" class="headerlink" title="模式单元"></a>模式单元</h3><ul>
-<li>( ) 匹配其中的整体为一个原子  （D|d)uang</li>
-</ul>
-<h3 id="修正模式"><a href="#修正模式" class="headerlink" title="修正模式"></a>修正模式</h3><p>当匹配的字符串产生歧义的时候，修正模式就发挥作用了，修正模式可以连用</p>
+        <p>在论坛上看到一个关于事件驱动的优缺点问题，然后就去网上找了找，现在记录下自己的想法。</p>
+<blockquote>
+<p>事件驱动，字面意思就是事件驱动着去干某件事，那事件就是主体。看了下百度百科对事件的定义是<em>比较重大,对一定的人群会产生一定影响的事情。</em>那对应与程序，我觉得每个请求也可以看成是一个事件呀，因为你发起一个请求，肯定就会有处理，有影响。</p>
+</blockquote>
+<p>事件驱动存在着这三样东西，事件接收器，事件分发器，事件处理器。</p>
+<h3 id="事件接收器"><a href="#事件接收器" class="headerlink" title="事件接收器"></a>事件接收器</h3><p>主要做接收工作，所有的请求都在这里接收</p>
+<h3 id="事件分发器"><a href="#事件分发器" class="headerlink" title="事件分发器"></a>事件分发器</h3><p>根据接收到的参数分发给谁去处理</p>
+<h3 id="事件处理器"><a href="#事件处理器" class="headerlink" title="事件处理器"></a>事件处理器</h3><p>主要负责处理请求，然后返回结果，比如我们程序的业务处理都在这里</p>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>这种处理逻辑在生活中的例子其实特别多，特别是在现在分工明确的社会。比如我们开发程序，产品经理提了n多个需求给我们的技术总监，然后技术总监分配给相应的开发给程序人员，这也是事件驱动。</p>
+<p>在程序中的应用其实也很多，现在大多的程序都是事件驱动型的，比如多进程处理，集群，那肯定是事件驱动型的，肯定是入口只有一个，然后一个处理器去做分发工作，分发到相应的处理器。入口只有一个，那就是单入口文件吗，现在的框架设计不就是这个原理吗，所有的请求都必须经过入口文件，那所有的请求都集中在一起，那肯定就是要搞事情呀，比如可以做一些检测、过滤、拦截、统计等等，相同的东西在抽一抽，那分层的概念就出来啦，比如验证的可以抽成验证层，把不符合规范的请求，就直接弹回去，那处理器也可以休息了（这里也可以脑补也一下系统任务处理，php-fpm的任务处理分发）。</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>在想想，其实事件驱动也改变了事情的处理方式，之前所有的请求都是线性的，现在都是集中在一个点然后去分发。比如之前我查看文章列表请求article_list.php,查看文件请求的是article_show.php, 我现在是所有的请求都直接请求article.php，通过参数去处理，然后去分发。<br>现在在脑补下优点，其实就特别多了是吧</p>
 <ul>
-<li>U   懒惰模式</li>
-<li>u   贪婪模式</li>
-<li>i    忽略字母大小写</li>
-<li>x   或略空白</li>
-<li>s   忽略回车</li>
+<li>解耦</li>
+<li>提高复用性</li>
 </ul>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>所有的请求都集中在一个点，那当访问量一大的时候，性能各种优化就要开始处理了，搞事情的复杂度就上来了。</p>
 
       
     </div>
@@ -423,9 +355,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/PHP/" rel="tag">#PHP</a>
-          
-            <a href="/tags/正则表达式/" rel="tag">#正则表达式</a>
+            <a href="/tags/事件/" rel="tag">#事件</a>
           
         </div>
       
@@ -434,17 +364,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/25/factory-modal/" rel="next" title="PHP设计模式之工厂模式">
-                <i class="fa fa-chevron-left"></i> PHP设计模式之工厂模式
+              <a href="/2016/12/31/js-selector/" rel="next" title="js 选择器">
+                <i class="fa fa-chevron-left"></i> js 选择器
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/26/mysql-engines/" rel="prev" title="MySQL存储引擎">
-                MySQL存储引擎 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -470,8 +396,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/26/preg-info/"
-           data-title="正则表达式简介" data-url="http://yoursite.com/2016/07/26/preg-info/">
+      <div class="ds-thread" data-thread-key="2017/01/14/php-design-mode/"
+           data-title="事件驱动" data-url="http://yoursite.com/2017/01/14/php-design-mode/">
       </div>
     
   </div>
@@ -608,7 +534,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#边界符"><span class="nav-number">1.</span> <span class="nav-text">边界符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原子"><span class="nav-number">2.</span> <span class="nav-text">原子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元字符"><span class="nav-number">3.</span> <span class="nav-text">元字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原子集合"><span class="nav-number">4.</span> <span class="nav-text">原子集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#量词"><span class="nav-number">5.</span> <span class="nav-text">量词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#边界控制"><span class="nav-number">6.</span> <span class="nav-text">边界控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模式单元"><span class="nav-number">7.</span> <span class="nav-text">模式单元</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修正模式"><span class="nav-number">8.</span> <span class="nav-text">修正模式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#事件接收器"><span class="nav-number">1.</span> <span class="nav-text">事件接收器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件分发器"><span class="nav-number">2.</span> <span class="nav-text">事件分发器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件处理器"><span class="nav-number">3.</span> <span class="nav-text">事件处理器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用"><span class="nav-number">4.</span> <span class="nav-text">应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-number">5.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点"><span class="nav-number">6.</span> <span class="nav-text">缺点</span></a></li></ol></div>
             
           </div>
         </section>
